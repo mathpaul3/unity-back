@@ -1,6 +1,6 @@
-from repository.nlp import get_url_by_word
 from sqlalchemy.orm import Session
 from konlpy.tag import Okt
+from app.repository.nlp import get_url_by_word
 
 
 tokenizer = Okt()

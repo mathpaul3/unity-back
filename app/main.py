@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from controller import nlp_controller, video_controller
+from app.controller import nlp_controller, video_controller
 
 origins = [
     "http://127.0.0.1:3000",
