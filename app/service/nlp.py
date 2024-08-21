@@ -1,11 +1,13 @@
-from app.repository.nlp import get_url_by_word
+from repository.nlp import get_url_by_word
 from sqlalchemy.orm import Session
 from konlpy.tag import Okt
 
 
+tokenizer = Okt()
+
+
 def get_nlp_result(sentence: str, db: Session) -> list[dict[str, str]]:
     results = list()
-    tokenizer = Okt()
     words = tokenizer.pos(sentence, norm=True)
     filter = ["Alpha", "Foreign", "Hashtag", "Josa", "ScreenName"]
 

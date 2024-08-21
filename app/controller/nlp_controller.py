@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from app.db.connection import get_db
-from app.service.nlp import get_nlp_result
+from db.connection import get_db
+from service.nlp import get_nlp_result
 
 router = APIRouter()
 

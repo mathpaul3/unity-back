@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.model.Word import Word
+from model.Word import Word
 
 
 def get_url_by_word(word: str, db: Session) -> str:
