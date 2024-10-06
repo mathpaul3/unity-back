@@ -14,13 +14,16 @@ def get_nlp_result(sentence: str, db: Session) -> dict[str, list[dict[str, str]]
 
     PREFIX = "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/"
     POSTFIX = "_700X466.webm"
-    for (word, tag) in words:
+    results["sequence"] = []
+    for word, tag in words:
         if tag not in filter:
             if tag not in results:
                 results[tag] = []
             url = get_url_by_word(word, db)
-            results[tag].append({
+            result = {
                 "word": word,
                 "url": f"{PREFIX}{url}{POSTFIX}" if url else ""
-            })
+            }
+            results[tag].append(result)
+            results["sequence"].append(result)
     return results
